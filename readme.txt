@@ -1,2 +1,2 @@
-this is a txtfile
+this is a good txtfile
 yes you are right!
