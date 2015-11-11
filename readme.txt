@@ -1,3 +1,3 @@
 this is a good txtfile
 yes you are right!
-haha
+haha,I'm a hero!
