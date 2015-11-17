@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Read a zip file demo</title>
+<script type="text/javascript" src="zip.js"></script>
+<script type="text/javascript" src="demo2.js"></script>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="plupload.full.min.js"></script>
+<script type="text/javascript" src="jquery.plupload.queue.js"></script>
+<script type="text/javascript" src="zh_CN.js"></script>
+<script type="text/javascript">
+$(function(){
+	var uploader1 = new plupload.Uploader({
+        browse_button : 'ssss', 
+        url : '=',
+    	filters: {
+   		  mime_types : [ 
+   		    { title : "Zip files", extensions : "zip" }
+   		  ],
+   		  max_file_size : '10mb'
+   		},
+//     	chunk_size:'2mb',
+    	multi_selection:false
+    });    
+    uploader1.init();
+    //绑定各种事件，并在事件监听函数中做你想做的事
+    uploader1.bind('FilesAdded',function(uploader1,files){
+    	plupload.each(files, function(file) {
+    		var aaa = checkzip(file.getNative());
+    		alert(aaa);
+		});
+    });
+})
+</script>
+
+</head>
+
+<body>
+	<div id="container">
+		<input type="button" id="ssss" value="上传文件">
+	</div>
+</body>
+</html>
