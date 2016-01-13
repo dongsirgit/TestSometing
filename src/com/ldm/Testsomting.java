@@ -2,28 +2,14 @@ package com.ldm;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.math.BigDecimal;
 import java.nio.charset.Charset;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
-import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
-
-import com.sun.mail.handlers.text_html;
-import com.sun.media.sound.SoftSynthesizer;
 
 public class Testsomting {
 	
@@ -98,7 +84,7 @@ public class Testsomting {
 			switch(str){
 			case "李东明" :System.out.println("好帅啊！！！");break;
 			case "高克孟" :System.out.println("好丑啊！！！");break;
-			default:System.out.println("换一个，这名不识别！");
+			default:System.out.println("换一个,这名不识别！");
 			}
 		}
 		
@@ -129,7 +115,7 @@ public class Testsomting {
 			}
 		}
 		
-		//subString 前包后不包（前一个数字代表的索引，包含在sub之后的字符串里;后一个数字代表的索引，不包含在sub之后的字符串里）
+		//subString 前包后不包（前一个数字代表的索引,包含在sub之后的字符串里;后一个数字代表的索引,不包含在sub之后的字符串里）
 		void testSubString(){
 			testSubString("abcdefg", 2, 5);
 			System.out.println("abceace".indexOf("e"));
@@ -139,7 +125,7 @@ public class Testsomting {
 		private static int[] ai = new int[18];
 		final static int[] wi = {7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1};
 		final static int[] vi = {1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2};
-		//验证18位校验码,校验码采用ISO 7064：1983，MOD 11-2 校验码系统
+		//验证18位校验码,校验码采用ISO 7064：1983,MOD 11-2 校验码系统
 	      public static boolean verifyMOD(String code){
 	            String verify = code.substring(17, 18);
 	            if("x".equals(verify)){
@@ -192,9 +178,25 @@ public class Testsomting {
 			me.invoke(ts, null);
 		}
 		
-		
-		
+		public static List<String> resolveTaxData(String data){
+			if(null!=data && data.trim().length()>0){
+				
+			}
+			
+			return null;
+		}
+		 public static String random() {
+		        StringBuilder code = new StringBuilder();
+		        Random random = new Random();
+		        // 6位验证码
+		        for (int i = 0; i < 6; i++) {
+		            code.append(String.valueOf(random.nextInt(10)));
+		        }
+		        return code.toString();
+		    }
 		public static void main(String[] args) {
+			
+			System.out.println(System.getProperty("java.io.tmpdir"));
 			
 		}
 		

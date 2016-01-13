@@ -9,6 +9,14 @@
     <servlet-name>upload</servlet-name>
     <url-pattern>/upload</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>testAjax</servlet-name>
+  	<servlet-class>com.ldm.servlet.TestAjaxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>testAjax</servlet-name>
+  	<url-pattern>/testAjax</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>upload.jsp</welcome-file>
   </welcome-file-list>

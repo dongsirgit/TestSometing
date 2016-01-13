@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试jquery</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.test').click(function(){
+		alert($(this).html());
+	})
+	var aa ;
+	$('.test').mouseover(function(){
+		$(this).attr("style","color:red;background-color:yellow");
+		aa = $(this).html();
+// 		$(this).html('变了');
+	});
+	$('.test').mouseout(function(){
+		$(this).attr("style","color:green;background-color:#E9E9E4");
+		$(this).html(aa);
+	});
+	
+	$('#dis').click(function(){
+		$('span#aa').hide();
+	})
+	
+});
+</script>
+</head>
+<body>
+<span id="aa" class="test" style="color:green;background-color:#E9E9E4">新闻</span>
+<span id="aa" class="test" style="color:green;background-color:#E9E9E4">汽车</span>
+<span class="test1" style="color:green;background-color:#E9E9E4">汽车1</span>
+<a id="dis" href="javascript:void(0)">全部消失吧！</a>
+</body>
+</html>
