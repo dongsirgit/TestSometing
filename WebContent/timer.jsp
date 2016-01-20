@@ -15,13 +15,13 @@
 <pre id="console"></pre>
 <script type="text/javascript">
 var fdafda =0;
-function alertSometing(){
+function showTimes(){
 	$('#console').html("这是第"+fdafda+"次提示！")
 	fdafda++;
-	setTimeout("alertSometing()",1000*1);
+	setTimeout("showTimes()",1000*1);//setTimeout:window的方法，定时执行方法。第一个参数为将要执行的方法，第二个参数为定时时间，单位毫秒
 }
 $(function(){
-	alertSometing();
+	showTimes();
 })
 </script>
 </body>
