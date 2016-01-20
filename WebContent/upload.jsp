@@ -8,15 +8,8 @@
 
 <title>Plupload - Custom example</title>
 
-<!-- production -->
 <script type="text/javascript" src="js/plupload.full.min.js"></script>
-
-
-<!-- debug 
-<script type="text/javascript" src="../js/moxie.js"></script>
-<script type="text/javascript" src="../js/plupload.dev.js"></script>
--->
-
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 </head>
 <body style="font: 13px Verdana; background: #eee; color: #333">
 
@@ -34,10 +27,7 @@
 
 <br />
 <pre id="console"></pre>
-
-
 <script type="text/javascript">
-// Custom example logic
 
 var uploader = new plupload.Uploader({
 	runtimes : 'html5,flash,silverlight,html4',

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.List;
@@ -196,7 +197,6 @@ public class Testsomting {
 		    }
 		public static void main(String[] args) {
 			
-			System.out.println(System.getProperty("java.io.tmpdir"));
 			
 		}
 		
