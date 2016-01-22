@@ -2,6 +2,9 @@ package com.ldm;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,6 +21,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
+
+import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
 
 public class Testsometing {
 
@@ -312,9 +317,79 @@ public class Testsometing {
 
         return resultBuffer.toString();
     }
+	
+	/**
+	  * @author Administrator
+	  * @Description: 测试"/"和"\"构成的文件路径，在IO操作中是否有区别
+	  * @param   
+	  * @return void  
+	  * @throws
+	  * @date 2016年1月22日 上午10:23:17
+	  */
+	public static void testIO(){
+		
+		String path = "C:\\Users\\Administrator\\Desktop\\111";
+		String path1=path.replaceAll("\\\\", "/");
+		System.out.println("path:"+path);
+		System.out.println("path1:"+path1);
+		File file = new File(path);
+		File file1 = new File(path1,"1.jpg");
+		System.out.println("filePath:"+file.getAbsolutePath());
+		System.out.println("file1Path:"+file1.getAbsolutePath());
+		System.out.println("path:"+file.isDirectory());
+		System.out.println("path:"+file.isFile());
+		System.out.println("path1:"+file1.isDirectory());
+		System.out.println("path1:"+file1.isFile());
+		FileInputStream input = null;
+		FileOutputStream out = null;
+		try {
+			input = new FileInputStream(file1);
+		
+			out = new FileOutputStream(new File("C:/Users/Administrator/Desktop/111","temp.jpg"));
+			int temp;
+			byte[] length = new byte[1024];
+			while((temp=input.read(length))!=-1){
+				out.write(length, 0, temp);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			
+		}finally {
+			if(input != null){
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if(out != null){
+				try {
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		//获取文件夹下的文件
+		System.out.println(file.listFiles().length);
+	}
 
+	/**
+	  * @author Administrator
+	  * @Description: TODO
+	  * @param @param args
+	  * @param @throws Exception  
+	  * @return void  
+	  * @throws
+	  * @date 2016年1月22日 上午10:23:13
+	  */
 	public static void main(String[] args) throws Exception {
-
+	
+		
+		
 	}
 
 }
