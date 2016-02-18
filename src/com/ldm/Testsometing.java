@@ -16,13 +16,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
-import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
 
 public class Testsometing {
 
@@ -375,21 +378,52 @@ public class Testsometing {
 		}
 		//获取文件夹下的文件
 		System.out.println(file.listFiles().length);
+		//新建file，不带路径直接用文件名创建file，创建的file路径为项目根路径，运行如下代码，结果：E:\workspace\ldm\a.jpg
+		File fileaa = new File("a.jpg");
+		System.out.println(fileaa.getAbsolutePath());
 	}
-
+	
+	
 	/**
 	  * @author Administrator
-	  * @Description: TODO
-	  * @param @param args
-	  * @param @throws Exception  
+	  * @Description: 数组、各种集合间相互转换、排序
+	  * @param   
 	  * @return void  
 	  * @throws
-	  * @date 2016年1月22日 上午10:23:13
+	  * @date 2016年2月18日 上午10:40:42
 	  */
-	public static void main(String[] args) throws Exception {
+	private static void testSort(){
+		List<String> list = new ArrayList<>();
+		list.add("aa");
+		list.add("aa");
+		list.add(77+"");
+		list.add(77+"");
+		list.add(99+"");
+		list.add("bb");
+		list.add(11+"");
+		list.add(88+"");
+		//list去重及排序 使用TreeSet
+		Set<String> set = new TreeSet<>(list);
+		System.out.println(list);
+		System.out.println(set);
+		
+		
+		String[] arr = new String[]{"222","333","111"};
+		//数组转换为List
+		List<String> list1 = new ArrayList<>(Arrays.asList(arr));
+		System.out.println(list1);
+		
+		
+		//数组排序使用Arrays.sort()
+		Arrays.sort(arr);
+		for(String tem:arr){
+			System.out.println(tem);
+		}
+	}
 	
-		
-		
+
+	public static void main(String[] args) throws Exception {
+		testSort();
 	}
 
 }
