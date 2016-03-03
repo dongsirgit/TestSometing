@@ -18,8 +18,8 @@ import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Enumeration;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -423,7 +423,6 @@ public class Testsometing {
 	
 
 	public static void main(String[] args) throws Exception {
-		testSort();
 	}
 
 }
